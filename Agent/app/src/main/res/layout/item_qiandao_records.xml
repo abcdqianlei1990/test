@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/qiandao_records_name_tv"
+        android:layout_width="wrap_content"
+        android:text="qiandao_records_name_tv"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black333333"
+        android:textSize="@dimen/sp16"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="@dimen/horizontal_margin"/>
+
+    <TextView
+        android:text="qiandao_records_date_tv"
+        android:id="@+id/qiandao_records_date_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/sp13"
+        android:textColor="@color/black808080"
+        android:layout_marginTop="11dp"
+        app:layout_constraintTop_toBottomOf="@+id/qiandao_records_name_tv"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="@dimen/horizontal_margin"/>
+    <TextView
+        android:text="qiandao_records_loc_tv"
+        android:id="@+id/qiandao_records_loc_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/sp13"
+        android:textColor="@color/black808080"
+        app:layout_constraintTop_toBottomOf="@+id/qiandao_records_date_tv"
+        android:layout_marginTop="2dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="@dimen/horizontal_margin"/>
+
+    <TextView
+        android:id="@+id/qiandao_records_amount_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:text="qiandao_records_amount_tv"
+        android:textColor="@color/redFF7731"
+        android:textSize="@dimen/sp13"
+        android:layout_marginTop="2dp"
+        app:layout_constraintLeft_toLeftOf="@+id/qiandao_records_loc_tv"
+        app:layout_constraintTop_toBottomOf="@+id/qiandao_records_loc_tv" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/qiandao_records_uploadcard_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/qiandao_records_amount_tv"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="15dp"
+        android:paddingTop="6dp"
+        android:paddingBottom="6dp"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:textSize="@dimen/sp12"
+        android:textColor="@color/green29AC3E"
+        android:text="传工牌"/>
+    <TextView
+        android:id="@+id/qiandao_records_split_line"
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:background="@color/commonBackground"
+        app:layout_constraintTop_toBottomOf="@+id/qiandao_records_amount_tv"
+        android:layout_marginTop="17dp"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        style="@style/TextBlack333333"
+        android:id="@+id/recy_job_flag"
+        android:gravity="right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/qiandao_records_amount_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/qiandao_records_name_tv"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.233" />
+</android.support.constraint.ConstraintLayout>

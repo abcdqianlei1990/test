@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_of_dialog_with_cancel_confirm"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/TextBlack333333Size_16"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:padding="12dp"
+        android:text="提示"
+        android:textSize="18sp" />
+
+    <View
+        android:id="@+id/view_top_line"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/commonLineColor" />
+
+    <TextView
+        android:id="@+id/tv_content"
+        style="@style/TextBlack808080Size_14"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:lineSpacingExtra="3dp"
+        android:text="" />
+
+    <LinearLayout
+        android:id="@+id/ll_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_bottom_line"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/commonLineColor" />
+
+    <LinearLayout
+        android:id="@+id/ll_bottom_parent"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/cancel"
+            android:background="?attr/selectableItemBackground"
+            style="@style/TextBlack808080Size_16"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+            android:visibility="visible"
+            android:gravity="center"
+            android:text="取消" />
+
+        <View
+            android:id="@+id/btn_division_line"
+            android:layout_width="1px"
+            android:visibility="visible"
+            android:layout_height="match_parent"
+            android:background="@color/commonLineColor" />
+
+        <TextView
+            android:background="?attr/selectableItemBackground"
+            android:id="@+id/submit"
+            style="@style/TextBlack333333Size_16"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:text="确定"
+            android:textColor="@color/green29AC3E" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

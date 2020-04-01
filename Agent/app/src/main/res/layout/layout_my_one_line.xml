@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <!--item的上分割线-->
+        <View
+            android:id="@+id/divider_top"
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="#efefef" />
+
+        <!--item内容部分的容器-->
+        <LinearLayout
+            android:id="@+id/ll_root"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/dp_45"
+            android:background="@android:color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <!--item左边的Icon-->
+            <ImageView
+                android:id="@+id/iv_left_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="@dimen/dp_10" />
+
+            <!--item中间部分的文字-->
+            <TextView
+                android:id="@+id/tv_text_content"
+                style="@style/TextBlack333333Size_14"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <!--item 中间部分的输入框（有则显示五则隐藏）-->
+            <EditText
+                android:id="@+id/edit_content"
+                style="@style/EditTextDefaultTheme"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                 />
+
+            <!--item右边的文字-->
+            <TextView
+                android:id="@+id/tv_right_text"
+                style="@style/TextBlack808080Size_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <!--item右边的Icon 默认是向右的箭头-->
+            <ImageView
+                android:id="@+id/iv_right_icon"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:src="@mipmap/ic_right_arrow" />
+        </LinearLayout>
+
+        <!--item的下分割线-->
+        <View
+            android:id="@+id/divider_bottom"
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="#efefef" />
+    </LinearLayout>
+    <LinearLayout
+        android:background="?attr/selectableItemBackground"
+        android:id="@+id/ll_onclick"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.AppCompatTextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_appointment_fail_tv"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="@dimen/sp_12"
+    android:textColor="@color/black333333"
+    android:text="有意向"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp"
+    android:paddingLeft="14dp"
+    android:paddingRight="14dp"
+    android:layout_margin="5dp"
+    />

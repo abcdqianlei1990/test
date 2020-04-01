@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/layout_fragment_newyearjob_top_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            style="@style/DefaultToolBar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
+            android:background="@color/white">
+
+
+            <TextView
+                android:id="@+id/tv_title"
+                style="@style/TextBlack333333Size_16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:maxLines="1"
+                android:text="客户预约春节后岗位"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/commonLineColor" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="26dp"
+        android:background="@drawable/shape_newyear_search_bg">
+
+        <TextView
+            android:id="@+id/tv_fragment_new_year_search_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_toLeftOf="@+id/ic_new_year_search_delete"
+            android:ellipsize="end"
+            android:hint="@string/please_input_newyear_search_value"
+            android:maxLines="1"
+            android:textColor="@color/black333333"
+            android:textColorHint="@color/blackC0C0C0"
+            android:textSize="@dimen/sp14" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/ic_new_year_search_delete"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/ic_delete"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="5dp"
+        android:background="@color/commonLineColor" />
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+
+        android:id="@+id/smartRefreshLayoutFragmentNewYearJob"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.ye.widget.StatusLayout
+            android:id="@+id/statusLayoutFragmentNewYear"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:visibility="visible"
+                android:id="@+id/recyclerViewFragmentNewYearJob"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </android.support.v7.widget.RecyclerView>
+        </com.ye.widget.StatusLayout>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+</LinearLayout>

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/commonBackground"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:id="@+id/ll_search_history"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingBottom="@dimen/dp_6"
+            android:paddingLeft="@dimen/dp_14"
+            android:paddingRight="@dimen/dp_14"
+            android:paddingTop="@dimen/dp_6"
+            tools:ignore="UselessParent">
+
+            <ImageView
+                android:id="@+id/iv_job_back"
+                android:layout_width="@dimen/dp_20"
+                android:layout_height="@dimen/dp_20"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/nav_back" />
+
+            <RelativeLayout
+                android:id="@+id/rl_search_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginStart="@dimen/dp_10"
+                android:layout_toRightOf="@+id/iv_job_back"
+                android:background="@drawable/bg_search_input">
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/ic_search_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginStart="20dp"
+                    android:src="@mipmap/ic_search" />
+
+                <TextView
+                    android:id="@+id/tv_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toLeftOf="@+id/ic_search_delete"
+                    android:layout_toRightOf="@+id/ic_search_icon"
+                    android:background="@color/transparent"
+                    android:gravity="center_vertical"
+                    android:hint="@string/please_input_job_name"
+                    android:imeOptions="actionSearch"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColorHint="@color/blackC0C0C0"
+                    android:textSize="@dimen/sp14"
+
+                    tools:ignore="RtlHardcoded" />
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/ic_search_delete"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/ic_delete" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/commonLineColor" />
+    <LinearLayout
+        android:id="@+id/rl_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="9dp"
+        android:paddingLeft="13dp"
+        android:paddingRight="13dp"
+        android:paddingTop="9dp">
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:background="@drawable/shape_job_search_white_radius_50">
+
+            <ImageView
+                android:id="@+id/iv_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="16dp"
+                android:src="@mipmap/ic_search" />
+
+            <TextView
+                style="@style/TextBlack808080Size_14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/please_input_job_name" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <cn.xzj.agent.widget.DropDownTabLayout
+        android:id="@+id/dropDownTabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+    </cn.xzj.agent.widget.DropDownTabLayout>
+
+    <View
+        android:id="@+id/popup_window_host"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/commonLineColor" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/activity_job_list_emptyview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="暂无数据"
+            android:textColor="@color/black808080"
+            android:textSize="@dimen/sp18"
+            android:visibility="gone" />
+
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:id="@+id/smartRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/activity_job_list_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+        <TextView
+            android:id="@+id/activity_job_list_cover_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.5"
+            android:background="@color/black333333"
+            android:visibility="gone" />
+    </FrameLayout>
+</LinearLayout>

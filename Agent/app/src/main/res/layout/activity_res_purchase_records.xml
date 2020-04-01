@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/commonBackground">
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/activity_resPurchaseRecord_smartRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        android:layout_marginTop="10dp">
+        <com.ye.widget.StatusLayout
+            android:id="@+id/activity_resPurchaseRecord_statusLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <android.support.v7.widget.RecyclerView
+                android:visibility="visible"
+                android:id="@+id/activity_resPurchaseRecord_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+        </com.ye.widget.StatusLayout>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+</LinearLayout>

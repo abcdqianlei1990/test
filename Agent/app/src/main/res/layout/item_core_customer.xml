@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:layout_height="wrap_content">
+    <!--客户信息-->
+    <RelativeLayout
+        android:id="@+id/item_core_customer_baseInfo_group"
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="15dp">
+        <TextView
+            android:id="@+id/tvCoreCustomerItemPhoneAndName"
+            style="@style/TextBlack333333"
+            android:layout_width="match_parent"
+            android:layout_toLeftOf="@+id/item_core_customer_intent_tv"
+            android:layout_height="wrap_content"
+            android:text="150****3477 王哥(王铁蛋)"
+            android:textSize="@dimen/sp16" />
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/item_core_customer_intent_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/yellowFF8500"
+            android:text="意向："
+            android:textSize="@dimen/sp_12"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:paddingLeft="9dp"
+            android:paddingRight="9dp"
+            android:layout_marginRight="15dp"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/white"
+            />
+    </RelativeLayout>
+
+    <!--岗位名称-->
+    <LinearLayout
+        android:id="@+id/item_core_customer_positionName_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="@+id/item_core_customer_baseInfo_group"
+        app:layout_constraintTop_toBottomOf="@+id/item_core_customer_baseInfo_group">
+
+        <TextView
+            style="@style/TextBlack333333"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="岗位名称"
+            android:textSize="11sp"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tvCoreCustomerItemPositionName"
+            style="@style/TextBlack808080"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="苏州华硕电脑"
+            android:textSize="11sp"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+    <!--离职状态-->
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/tvCoreCustomerItemCurrentStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ffffe9dd"
+        android:paddingLeft="8dp"
+        android:paddingTop="2dp"
+        android:paddingRight="8dp"
+        android:paddingBottom="2dp"
+        android:text="已入职"
+        android:textColor="@color/FF3333333"
+        android:textSize="11sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="19dp"
+        android:layout_marginTop="30dp"/>
+
+    <!--签到时间-->
+    <LinearLayout
+        android:id="@+id/item_core_customer_signDate_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/item_core_customer_positionName_group"
+        app:layout_constraintLeft_toLeftOf="@+id/item_core_customer_positionName_group">
+
+        <TextView
+            style="@style/TextBlack333333"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="签到时间"
+            android:textSize="11sp"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tvCoreCustomerItemSignInTime"
+            style="@style/TextBlack808080"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="2018.03.05 12:00"
+            android:textSize="11sp"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+    <!--入职时间-->
+    <LinearLayout
+        android:id="@+id/llCoreCustomerItemPositionInTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/item_core_customer_signDate_group"
+        app:layout_constraintLeft_toLeftOf="@+id/item_core_customer_signDate_group">
+
+        <TextView
+            style="@style/TextBlack333333"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="入职时间"
+            android:textSize="11sp"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tvCoreCustomerItemPositionInTime"
+            style="@style/TextBlack808080"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="2018.03.05 12:00"
+            android:textSize="11sp"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+    <!--离职时间-->
+    <LinearLayout
+        android:id="@+id/llCoreCustomerItemLeavePositionTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/llCoreCustomerItemPositionInTime"
+        app:layout_constraintLeft_toLeftOf="@+id/llCoreCustomerItemPositionInTime">
+
+        <TextView
+            style="@style/TextBlack333333"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="离职时间"
+            android:textSize="11sp"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tvCoreCustomerItemLeavePositionTime"
+            style="@style/TextBlack808080"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="2018.03.05 12:00"
+            android:textSize="11sp"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+    <!--最近注记-->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/llCoreCustomerItemLeavePositionTime"
+        app:layout_constraintLeft_toLeftOf="@+id/llCoreCustomerItemLeavePositionTime"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="15dp">
+
+        <TextView
+            style="@style/TextBlack333333"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="最近注记"
+            android:textSize="11sp"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tvCoreCustomerItemLastMark"
+            style="@style/TextBlack808080"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="无"
+            android:textSize="11sp"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

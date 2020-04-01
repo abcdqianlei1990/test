@@ -1,0 +1,162 @@
+<resources>
+    <string name="app_name">小职姐服务版</string>
+    <string name="tab_task">任务列表</string>
+    <string name="tab_customer">客户列表</string>
+    <string name="tab_usercenter">我的</string>
+    <string name="applied_count"><Data><![CDATA[<font color="#FF7731">%1$s人</font><font color="#333333">已报名</font>]]></Data></string>
+    <string name="user_base_info"><Data><![CDATA[<font color="#333333">%1$s %2$s</font><font color="#808080">%3$s</font>]]></Data></string>
+
+    <string-array name="education">
+        <item>小学</item>
+        <item>初中</item>
+        <item>中专/技校</item>
+        <item>高中/职高</item>
+        <item>大专</item>
+        <item>本科及以上</item>
+    </string-array>
+
+    <string-array name="work_status">
+        <item>在职</item>
+        <item>离职</item>
+    </string-array>
+    <string-array name="work_status_id">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="salary_scope">
+        <item>2000元以下</item>
+        <item>2000-3000元</item>
+        <item>3000-4000元</item>
+        <item>4000-5000元</item>
+        <item>5000-7000元</item>
+        <item>7000-10000元</item>
+        <item>10000元以上</item>
+    </string-array>
+
+    <string-array name="special_character">
+        <item>少数民族</item>
+        <item>烟疤</item>
+        <item>残疾</item>
+        <item>纹身</item>
+        <item>骂人</item>
+        <item>有案底</item>
+    </string-array>
+    <string-array name="special_character_id">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
+
+    <string-array name="personal_flag_id">
+        <item>12</item>
+        <item>11</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17 </item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+    </string-array>
+    <string-array name="personal_flag">
+        <item>不怕累</item>
+        <item>不怕脏</item>
+        <item>不看显微镜</item>
+        <item>不穿无尘服</item>
+        <item>希望高返费</item>
+        <item>倾向小厂</item>
+        <item>倾向大厂</item>
+        <item>倾向短期/兼职工</item>
+        <item>倾向稳定工作</item>
+        <item>要求包吃住</item>
+        <item>要求五险一金</item>
+    </string-array>
+
+    <string-array name="skill_flag">
+        <item>普工</item>
+        <item>技术工</item>
+    </string-array>
+    <string-array name="skill_flag_id">
+        <item>101</item>
+        <item>102</item>
+    </string-array>
+
+    <string-array name="work_intent">
+        <item>工厂普工</item>
+        <item>服务人员</item>
+        <item>司机家政</item>
+        <item>不限</item>
+    </string-array>
+    <string-array name="entry_time">
+        <item>三天到岗</item>
+        <item>一周到岗</item>
+        <item>两周到岗</item>
+        <item>一个月到岗</item>
+    </string-array>
+
+    <string-array name="invalid_reason">
+        <item>中介送人的</item>
+        <item>劳务招人的</item>
+        <item>企业人事</item>
+        <item>内部员工</item>
+        <item>重度残疾</item>
+        <item>重罪案底</item>
+        <item>精神病人</item>
+        <item>年龄超过55岁</item>
+        <item>新疆维族人</item>
+        <item>四川彝族人</item>
+        <item>频繁骚扰</item>
+        <item>其他原因</item>
+    </string-array>
+
+    <string name="zx_agreement_notice">用户没有同意周薪协议，暂不可直接申请，请引导用户自主申请</string>
+    <string name="btn_get_captcha">获取验证码</string>
+    <string name="loading">正在加载中</string>
+    <string name="retry">重试</string>
+    <string name="close">关闭</string>
+    <string name="confirm">确认</string>
+    <string name="cancel">取消</string>
+    <string name="connection_to_server_failed">连接到服务器失败</string>
+    <string name="please_input_job_name">请输入岗位名称</string>
+    <string name="search_history">搜索历史</string>
+    <string name="login_invalid_please_relogin">登录信息已失效,请重新登录</string>
+    <string name="reset">重置</string>
+    <string name="wx_friend_upload_description">说明:证明截图可打开工作微信，点击底部\"通讯录\",拉到底部,露出联系人数量，截图保存。<u><font color="#577FCC"> 点击查看截图示例 </font></u> </string>
+    <string name="wx_friend_upload_date_description">请上传<font color="#FF7731">%1$d年%2$d月%3$d日</font>的微信用户数</string>
+    <string name="scan_it">扫一扫</string>
+    <string name="share_error">分享失败</string>
+    <string name="share_success">分享成功</string>
+    <string name="tab_newyearjob">春节预约</string>
+    <string name="tab_buyres">买资源</string>
+    <string name="tab_msg">消息</string>
+    <string name="tab_job">企业</string>
+    <string name="please_input_newyear_search_value">请输入用户手机号或姓名或常用称呼或岗位信息</string>
+    <string name="send">发送</string>
+    <string name="voice_btn_state_normal">按住 说话</string>
+    <string name="voice_btn_state_recording">松开 结束</string>
+    <string name="voice_btn_state_cancel">松开手指，取消发送</string>
+    <string name="image">图片</string>
+    <string name="video">视频</string>
+    <string name="job_source_user_is_look">用户可见</string>
+    <string name="save">保存</string>
+    <string name="go_to_id_card_certification">去认证</string>
+    <string name="determine">确定</string>
+    <string name="id_card_certification_phone">手机号</string>
+    <string name="id_card_certification_please_input_phone">请输入手机号</string>
+    <string name="id_card_certification_name">姓名</string>
+    <string name="id_card_certification_please_input_name">请输入姓名</string>
+    <string name="id_card_certification_id_card_number">身份证号</string>
+    <string name="id_card_certification_please_input_id_card_number">请输入身份证号</string>
+    <string name="activity_id_card_certification_certification_success">实名认证成功</string>
+    <string name="activity_job_reservation_ready_apply_detail">需预报名提示：该岗位是预报名岗位，请协助客户进行实名认证</string>
+    <string name="activity_id_card_certification_i_know">我知道了</string>
+    <string name="activity_download_title">我的下载</string>
+    <string name="please_select_issue_type">请选择问题类型</string>
+    <string name="sort_type_intent_level">意愿等级</string>
+</resources>

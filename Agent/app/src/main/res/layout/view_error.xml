@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_15"
+        android:src="@mipmap/load_error" />
+
+    <TextView
+
+        style="@style/TextBlack808080Size_16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="服务器走丢了" />
+
+    <TextView
+        android:id="@+id/tv_try"
+        style="@style/TextBlack808080Size_12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_15"
+        android:background="@drawable/bg_green_radius_5"
+        android:paddingBottom="@dimen/dp_5"
+        android:paddingLeft="@dimen/dp_15"
+        android:paddingRight="@dimen/dp_15"
+        android:paddingTop="@dimen/dp_5"
+        android:text="@string/retry"
+        android:textColor="@color/white" />
+
+</LinearLayout>

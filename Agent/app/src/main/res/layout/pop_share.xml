@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/share_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/commonBackground"/>
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/commonLineColor"/>
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/share_cancel_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="取消"
+            android:gravity="center"
+            android:textSize="@dimen/sp_18"
+            android:textColor="@color/black"
+            android:paddingTop="18dp"
+            android:paddingBottom="18dp"
+            android:background="@color/white"
+            />
+    </LinearLayout>
+</LinearLayout>

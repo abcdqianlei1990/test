@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btn_upload">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingBottom="10dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/iv_previous_month"
+                        android:layout_width="27dp"
+                        android:layout_height="27dp"
+                        android:padding="@dimen/dp_5"
+                        android:src="@mipmap/ic_wx_screenshot_date_select_previous_page" />
+
+                    <TextView
+                        android:id="@+id/tv_date_content"
+                        style="@style/TextBlack666666"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:gravity="center"
+                        android:text="2016年11月" />
+
+                    <ImageView
+                        android:id="@+id/iv_next_month"
+                        android:layout_width="27dp"
+                        android:layout_height="27dp"
+                        android:padding="@dimen/dp_5"
+                        android:src="@mipmap/ic_wx_screenshot_date_select_next_page" />
+                </LinearLayout>
+
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerViewDay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white">
+
+                </android.support.v7.widget.RecyclerView>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_desc"
+                style="@style/TextBlack808080Size_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="12dp"
+                android:text="请上传---的微信用户数" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/btn_wechat_account_parent"
+                android:background="@color/white">
+
+                <TextView
+                    style="@style/TextBlack333333"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="14dp"
+                    android:text="微信号" />
+
+                <TextView
+                    android:id="@+id/btn_wx_id"
+                    style="@style/EditTextDefaultTheme"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="8dp"
+                    android:layout_toLeftOf="@+id/iv_wx_id_arrow"
+                    android:gravity="right"
+                    android:hint="请选择微信号" />
+                <ImageView
+                    android:id="@+id/iv_wx_id_arrow"
+                    style="@style/TextBlack333333"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="14dp"
+                    android:src="@mipmap/ic_right_arrow" />
+
+            </RelativeLayout>
+            <View
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="14dp"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/commonLineColor" />
+
+            <RelativeLayout
+                android:id="@+id/btn_select_wx_screenshot"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:background="@color/white">
+
+                <TextView
+                    style="@style/TextBlack333333"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="14dp"
+                    android:text="证明截图" />
+
+                <ImageView
+                    android:id="@+id/iv_wx_friend_screenshot"
+                    style="@style/TextBlack333333"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="8dp"
+                    android:layout_toLeftOf="@+id/iv_wx_friend_screenshot_arrow"
+                    android:scaleType="fitXY" />
+
+                <TextView
+                    android:id="@+id/tv_select_wx_screenshot_photo"
+                    style="@style/TextBlack808080Size_16"
+                    android:layout_width="50dp"
+                    android:layout_centerVertical="true"
+                    android:layout_height="50dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_toLeftOf="@+id/iv_wx_friend_screenshot_arrow"
+                    android:background="@drawable/bg_upload_wx_screenshot_photo"
+                    android:gravity="center"
+                    android:text="图片"
+                    android:textColor="@color/white" />
+
+                <ImageView
+                    android:id="@+id/iv_wx_friend_screenshot_arrow"
+                    style="@style/TextBlack333333"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="14dp"
+                    android:src="@mipmap/ic_right_arrow" />
+            </RelativeLayout>
+            <View
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="14dp"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/commonLineColor" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/white">
+
+                <TextView
+                    android:id="@+id/tv_wx_friend_number_desc"
+                    style="@style/TextBlack333333"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="14dp"
+                    android:text="微信用户数" />
+
+                <EditText
+                    android:layout_marginLeft="16dp"
+                    android:layout_toRightOf="@+id/tv_wx_friend_number_desc"
+                    android:id="@+id/et_wx_friend_number"
+                    style="@style/EditTextDefaultTheme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="14dp"
+                    android:gravity="right"
+                    android:hint="请输入微信好友数"
+                    android:inputType="number"
+                    android:maxWidth="200dp"
+                    android:minWidth="200dp" />
+
+            </RelativeLayout>
+
+
+
+
+            <TextView
+                android:id="@+id/btn_wx_friend_upload_description"
+                style="@style/TextBlack808080Size_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="14dp"
+                android:layout_marginTop="12dp"
+                android:text="@string/wx_friend_upload_description" />
+        </LinearLayout>
+    </ScrollView>
+
+
+    <RelativeLayout
+        android:id="@+id/btn_upload"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/green29AC3E">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="确认上传"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+</RelativeLayout>

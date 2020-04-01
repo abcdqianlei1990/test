@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/btnActivityFeedbackSelectIssueType"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:layout_marginTop="13dp"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            style="@style/TextBlack333333"
+            android:layout_width="wrap_content"
+            android:textSize="@dimen/sp16"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="14dp"
+            android:text="@string/please_select_issue_type" />
+
+        <TextView
+            android:id="@+id/tvActivityFeedbackSelectIssueType"
+            style="@style/TextBlack808080Size_14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="14dp"
+            android:layout_toLeftOf="@+id/ivActivityFeedbackSelectIssueTypeArrow"
+            android:text=""/>
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/ivActivityFeedbackSelectIssueTypeArrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="14dp"
+            android:src="@mipmap/ic_right_arrow" />
+    </RelativeLayout>
+
+    <EditText
+        app:layout_constraintTop_toBottomOf="@+id/btnActivityFeedbackSelectIssueType"
+        android:id="@+id/editActivityFeedbackDetail"
+        style="@style/EditTextDefaultTheme"
+        android:layout_width="match_parent"
+        android:layout_height="196dp"
+        android:layout_marginTop="13dp"
+        android:maxLength="200"
+        android:background="@color/white"
+        android:gravity="left|top"
+        android:hint="请描述你遇到的问题或你的建议"
+        android:padding="14dp"
+        android:textSize="16sp"
+        />
+
+    <Button
+        android:id="@+id/btnActivityFeedbackCommit"
+        style="@style/ButtonGreen29AC3E"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="提交"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerViewActivityImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnActivityFeedbackCommit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editActivityFeedbackDetail" />
+
+    <TextView
+        android:id="@+id/tvActivityFeedbackMaxLength"
+        style="@style/TextBlack808080"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="8dp"
+        android:text="可输入0/200字"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toBottomOf="@+id/editActivityFeedbackDetail"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

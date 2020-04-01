@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <paths>
+        <files-path path="" name="xzjagent_intfiles" />
+        <external-path path="" name="xzjagent_ext" />
+        <cache-path path="" name="xzjagent_cachefiles" />
+        <external-files-path path="" name="xzjagent_extfiles"/>
+        <external-cache-path path="" name="xzjagent_extcache"/>
+        <external-media-path path="" name="xzjagent_extmedia"/>
+    </paths>
+</paths>

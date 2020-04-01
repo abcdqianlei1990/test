@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.constraint.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/jiezhan_records_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/horizontal_margin"
+            android:layout_marginTop="20dp"
+            android:text="昆山作业员"
+            android:textColor="@color/black333333"
+            android:textSize="@dimen/sp16"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/jiezhan_records_date_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/horizontal_margin"
+            android:layout_marginTop="11dp"
+            android:text="接站时间"
+            android:textColor="@color/black808080"
+            android:textSize="@dimen/sp13"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/jiezhan_records_name_tv" />
+
+        <TextView
+            android:id="@+id/jiezhan_records_loc_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/horizontal_margin"
+            android:layout_marginTop="2dp"
+            android:text="接站地点"
+            android:textColor="@color/black808080"
+            android:textSize="@dimen/sp13"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/jiezhan_records_date_tv" />
+
+        <TextView
+            android:id="@+id/jiezhan_records_user_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/horizontal_margin"
+            android:layout_marginTop="2dp"
+            android:text="预约人: 小职位姐"
+            android:textColor="@color/black808080"
+            android:textSize="@dimen/sp13"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/jiezhan_records_loc_tv" />
+
+        <TextView
+            android:id="@+id/jiezhan_records_cancel_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/horizontal_margin"
+            android:background="@drawable/bg_green_solid_green_stroke_4corner"
+            android:padding="6dp"
+            android:text="取消接站"
+            android:textColor="@color/green29AC3E"
+            android:textSize="@dimen/sp12"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/jiezhan_records_name_tv" />
+
+        <TextView
+            android:id="@+id/jiezhan_records_split_line"
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:layout_marginTop="@dimen/dp_20"
+            android:background="@color/commonBackground"
+            app:layout_constraintTop_toBottomOf="@+id/jiezhan_records_user_type" />
+    </android.support.constraint.ConstraintLayout>
+</RelativeLayout>

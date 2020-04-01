@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/layout_fragment_job_top_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            style="@style/DefaultToolBar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
+            android:background="@color/white">
+
+
+            <TextView
+                android:id="@+id/tv_title"
+                style="@style/TextBlack333333Size_16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:maxLines="1"
+                android:text="企业职位列表"
+                android:textSize="18sp" />
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/iv_company_job_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="14dp"
+                app:srcCompat="@mipmap/ic_company_search" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/commonLineColor" />
+    </LinearLayout>
+
+    <cn.xzj.agent.widget.DropDownTabLayout
+        android:id="@+id/dropDownTabLayoutFragmentJob"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+    </cn.xzj.agent.widget.DropDownTabLayout>
+
+    <View
+        android:id="@+id/viewTabLayoutFragmentJob"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/commonLineColor" />
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+
+        android:id="@+id/smartRefreshLayoutFragmentJob"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.ye.widget.StatusLayout
+            android:id="@+id/statusLayoutCompanyJob"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerViewFragmentJob"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </android.support.v7.widget.RecyclerView>
+        </com.ye.widget.StatusLayout>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+</LinearLayout>

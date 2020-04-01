@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/dialog_task_done_notice_phone_content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_job_feature_item_unselected"
+            android:gravity="center"
+            android:paddingBottom="6dp"
+            android:paddingTop="6dp"
+            android:text="已接通手机"
+            android:textColor="@color/black666666"
+            android:textSize="@dimen/sp12"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/dialog_task_done_notice_wechat_content" />
+
+        <TextView
+            android:id="@+id/dialog_task_done_notice_wechat_content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_job_feature_item_unselected"
+            android:gravity="center"
+            android:paddingBottom="6dp"
+            android:paddingTop="6dp"
+            android:text="已接通微信"
+            android:textColor="@color/black666666"
+            android:textSize="@dimen/sp12"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toRightOf="@+id/dialog_task_done_notice_phone_content"
+            app:layout_constraintRight_toLeftOf="@+id/dialog_task_done_notice_tel_content"
+            app:layout_constraintTop_toTopOf="@+id/dialog_task_done_notice_phone_content" />
+
+        <TextView
+            android:id="@+id/dialog_task_done_notice_tel_content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_job_feature_item_unselected"
+            android:gravity="center"
+            android:paddingBottom="6dp"
+            android:paddingTop="6dp"
+            android:text="已接通固话"
+            android:textColor="@color/black666666"
+            android:textSize="@dimen/sp12"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toRightOf="@+id/dialog_task_done_notice_wechat_content"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/dialog_task_done_notice_phone_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/dialog_task_done_notice_follow_content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_job_feature_item_unselected"
+            android:gravity="center"
+            android:paddingBottom="6dp"
+            android:paddingTop="6dp"
+            android:text="放弃跟进"
+            android:textColor="@color/black666666"
+            android:textSize="@dimen/sp12" />
+
+        <TextView
+            android:id="@+id/dialog_task_done_notice_contactnotyet_content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_job_feature_item_unselected"
+            android:gravity="center"
+            android:paddingBottom="6dp"
+            android:paddingTop="6dp"
+            android:text="未取得联系"
+            android:textColor="@color/black666666"
+            android:textSize="@dimen/sp12" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_hint"
+        style="@style/TextBlack808080Size_12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        android:text="注释:接通固话/手机并成功添加微信的，请选择'已添加微信'!" />
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/dialog_task_done_notice_ed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_gray_solid_with_4corner"
+        android:enabled="true"
+        android:focusable="true"
+        android:gravity="left|top"
+        android:hint="请填写联系的注记"
+        android:maxLength="50"
+        android:paddingBottom="37dp"
+        android:paddingLeft="11dp"
+        android:paddingRight="11dp"
+        android:paddingTop="7dp"
+        android:text=""
+        android:textColor="@color/black666666"
+        android:textColorHint="@color/black999999"
+        android:textSize="@dimen/sp12"
+        android:visibility="visible" />
+</LinearLayout>

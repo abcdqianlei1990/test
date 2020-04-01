@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/smartRefreshLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_top_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_gradient"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/fragment_home_laugh_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="@dimen/horizontal_margin"
+                    android:layout_marginTop="15dp"
+                    android:background="@mipmap/ic_laugh" />
+
+                <TextView
+                    android:id="@+id/fragment_home_date_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/fragment_home_laugh_tv"
+                    android:text="6月24日 今天任务"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp14" />
+
+                <TextView
+                    android:layout_width="9dp"
+                    android:layout_height="6dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="3dp"
+                    android:layout_toRightOf="@+id/fragment_home_date_tv"
+                    android:background="@mipmap/ic_triangle_down" />
+
+                <TextView
+                    android:id="@+id/fragment_home_msgIcon_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/horizontal_margin"
+                    android:background="@mipmap/ic_msg" />
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/fragment_home_msgIconPoint_tv"
+                    android:layout_width="7dp"
+                    android:layout_height="7dp"
+                    android:layout_alignBottom="@+id/fragment_home_msgIcon_tv"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/bg_small_red_point"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <!--<android.support.design.widget.TabLayout-->
+                <!--android:id="@+id/tablayout"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--app:tabPaddingStart="14dp"-->
+                <!--app:tabPaddingEnd="14dp"-->
+                <!--app:tabMinWidth="0dp"-->
+                <!--app:tabPaddingBottom="1dp"-->
+                <!--app:tabMode="scrollable"-->
+                <!--app:tabTextAppearance="@style/MyTabLayoutTextAppearance">-->
+
+            <!--</android.support.design.widget.TabLayout>-->
+            <com.flyco.tablayout.SlidingTabLayout
+                android:id="@+id/tablayout"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                app:tl_indicator_color="@color/tabIndicatorColor"
+                app:tl_indicator_height="3dp"
+                app:tl_tab_padding="14dp"
+                app:tl_indicator_margin_top="11dp"
+                app:tl_indicator_width_equal_title="true"
+                app:tl_tab_space_equal="false"
+                app:tl_textSelectColor="@color/white"
+                app:tl_textUnselectColor="@color/green9DE5A9"
+                app:tl_textsize="16sp">
+
+            </com.flyco.tablayout.SlidingTabLayout>
+        </LinearLayout>
+
+        <com.ye.widget.StatusLayout
+            android:id="@+id/statusLayoutFragmentHome"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </com.ye.widget.StatusLayout>
+
+    </LinearLayout>
+</android.support.v4.widget.SwipeRefreshLayout>

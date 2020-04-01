@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:id="@+id/rlActiveFragmentCustomerSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tvActiveFragmentCustomerSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="5dp"
+            android:layout_toLeftOf="@+id/ivActiveFragmentCustomerSearchDelete"
+            android:background="@drawable/bg_search_input"
+            android:gravity="center"
+            android:hint="请输入用户手机号或姓名或常用称呼"
+            android:lineSpacingExtra="5dp"
+            android:paddingLeft="@dimen/horizontal_margin"
+            android:paddingTop="6dp"
+            android:paddingRight="@dimen/horizontal_margin"
+            android:paddingBottom="6dp"
+            android:text=""
+            android:textColor="@color/black333333"
+            android:textColorHint="@color/blackC0C0C0"
+            android:textSize="@dimen/sp14"
+            android:visibility="visible" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/ivActiveFragmentCustomerSearchDelete"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="6dp"
+            android:paddingRight="@dimen/horizontal_margin"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            android:visibility="visible" />
+
+    </RelativeLayout>
+
+    <cn.xzj.agent.widget.DropDownTabLayout
+        android:id="@+id/dropDownTabLayoutActiveFragmentCustomer"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+    </cn.xzj.agent.widget.DropDownTabLayout>
+
+    <View
+        android:id="@+id/viewActiveFragmentCustomer"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/commonLineColor" />
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/smartRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/commonBackground">
+
+        <com.ye.widget.StatusLayout
+            android:id="@+id/statusLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerViewActiveFragmentCustomer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </com.ye.widget.StatusLayout>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+</LinearLayout>

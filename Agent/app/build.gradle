@@ -1,0 +1,277 @@
+import java.util.regex.Matcher
+import java.util.regex.Pattern
+
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+apply from: 'mobsdk.gradle'
+apply plugin: 'kotlin-kapt' // if using Kotlin
+//apply plugin: 'walle' //不兼容最新gradle版本
+apply plugin: 'channel'
+
+
+def isRelease = isRelease()
+def ENV_DEV = "0"
+def ENV_TEST = "1"
+def ENV_PRO = "2"
+def APPLICATION_ID_DEFAULT = "cn.xzj.agent"
+def APP_NAME_DEFAULT = "小职姐服务版"
+
+android {
+    compileSdkVersion rootProject.ext.globalCompileSdkVersion
+    signingConfigs {
+        config_key {
+            keyAlias 'xzjagent'
+            keyPassword 'xiaozhijie'
+            storeFile file('xzj_agent.jks')
+            storePassword 'xiaozhijie'
+            v2SigningEnabled true//v2签名
+        }
+//        release {
+//            v2SigningEnabled true
+//        }
+    }
+    defaultConfig {
+        applicationId APPLICATION_ID_DEFAULT
+        resValue("string", "appName", APP_NAME_DEFAULT)
+        targetSdkVersion rootProject.ext.globalTargetSdkVersion
+        minSdkVersion rootProject.ext.globalMinSdkVersion //分dex加速编译
+        versionCode 55
+        versionName "1.9.3"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled false //暂时关闭分Dex
+        boolean hasEnv = project.hasProperty('env')
+        println "================================================================"
+        println "#### has property :" + hasEnv
+        def env = project.property('env')
+        println "================================================================"
+        if (hasEnv) {
+            println "================================================================"
+            println "#### current environment is :" + env
+            println "================================================================"
+            switch (env) {
+                case 'dev':
+                    buildConfigField "int", "ENVIRONMENT", ENV_DEV
+                    break;
+                case 'test':
+                    buildConfigField "int", "ENVIRONMENT", ENV_TEST
+                    break;
+                case 'pro':
+                    minSdkVersion 17 //恢复默认的最小安装android版本
+                    buildConfigField "int", "ENVIRONMENT", ENV_PRO
+                    break;
+                default:
+                    buildConfigField "int", "ENVIRONMENT", ENV_PRO
+                    break
+            }
+        } else {
+            def envTemp
+            if (isRelease) {
+                envTemp = ENV_PRO
+                minSdkVersion 17 //恢复默认的最小安装android版本
+            } else {
+                envTemp = ENV_TEST
+            }
+            buildConfigField "int", "ENVIRONMENT", envTemp
+            println "================================================================"
+            println "#### property 'env' is null,set default environment " + envTemp
+            println "================================================================"
+        }
+        archivesBaseName = "xzj-agent-" + env + "-" + versionName + "-v" + versionCode
+//        ndk {
+//            abiFilters "armeabi-v7a","x86"
+//        }
+        ndk {
+            // bugly ndk设置支持的SO库架构
+            abiFilters 'armeabi', 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+        }
+        vectorDrawables.useSupportLibrary = true
+    }
+    buildTypes {
+        release {
+            multiDexEnabled true //分Dex
+            minifyEnabled false
+//            shrinkResources true
+//            debuggable true
+            // Zipalign优化
+//            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config_key
+        }
+        debug{
+            multiDexEnabled true //分Dex
+            signingConfig signingConfigs.config_key
+        }
+        compileOptions{
+            sourceCompatibility JavaVersion.VERSION_1_8
+            targetCompatibility JavaVersion.VERSION_1_8
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    //    implementation 'org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version'
+    implementation rootProject.androidDependencies.appcompat_v7
+    implementation rootProject.androidDependencies.design
+    implementation rootProject.androidDependencies.support_v4
+    implementation rootProject.androidDependencies.support_vector_drawable
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    testImplementation 'junit:junit:4.12'
+
+    //    androidTestImplementation 'com.android.support.test:runner:28.0.0'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    //channey
+    implementation 'com.github.abcdqianlei1990:CommonUtils:3.6'
+    implementation 'com.github.abcdqianlei1990:TimerButton:2.0'
+    implementation 'com.github.abcdqianlei1990:ShapeView:1.1'
+
+    //net
+
+    //    api 'io.reactivex.rxjava2:rxjava:2.1.16'
+
+    //    api 'io.reactivex.rxjava2:rxandroid:2.0.1'
+
+    //    implementation 'com.squareup.okhttp3:okhttp:3.5.0'
+
+    //    implementation 'com.squareup.retrofit2:retrofit:2.1.0'
+
+    //    implementation 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+
+    //    implementation 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+
+    //RxJava
+    api 'io.reactivex.rxjava2:rxjava:2.2.3'
+    api 'io.reactivex.rxjava2:rxandroid:2.1.0'
+
+    //retrofit2
+    api 'com.squareup.retrofit2:retrofit:2.4.0'
+    api 'com.squareup.retrofit2:adapter-rxjava2:2.2.0'
+    api 'com.squareup.retrofit2:converter-gson:2.3.0'
+
+    //okHttp3
+    api 'com.squareup.okhttp3:okhttp:3.10.0'
+    api 'com.squareup.okhttp3:logging-interceptor:3.9.1'
+    api 'com.squareup.okio:okio:1.14.0'
+
+    // widget
+    implementation 'com.ashokvarma.android:bottom-navigation-bar:2.0.4'
+    implementation 'com.hyman:flowlayout-lib:1.1.2'
+
+    //    implementation "com.android.support:recyclerview-v7:27.1.1"
+
+    //    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+
+    //    implementation 'com.google.android:flexbox:1.1.0'
+
+    //条件选择对话框
+    api 'com.contrarywind:Android-PickerView:4.1.7'
+    compile 'com.contrarywind:wheelview:4.0.9'
+
+    //左右对齐textView
+    implementation 'me.codeboy.android:align-text-view:2.3.2'
+
+    //智能刷新控件
+    api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-4'
+    api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-1'
+    api 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-1'
+
+    //image loader
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    implementation 'jp.wasabeef:glide-transformations:2.0.0'
+    implementation 'com.youth.banner:banner:1.4.10'
+
+    //第三方库
+    implementation 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.3@aar'
+    implementation 'cn.aigestudio.wheelpicker:WheelPicker:1.1.2'
+    implementation 'net.zetetic:android-database-sqlcipher:3.5.6@aar'
+    implementation 'org.greenrobot:eventbus:3.0.0'
+    implementation 'com.alibaba:fastjson:1.2.46'
+
+    //内存泄漏检测
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.3'
+    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.3'
+
+    //友盟
+    //PushSDK必须依赖基础组件库，所以需要加入对应依赖
+    implementation 'com.umeng.umsdk:common:2.1.0'
+    //PushSDK必须依赖utdid库，所以需要加入对应依赖
+    implementation 'com.umeng.umsdk:utdid:1.1.5.3'
+    //PushSDK
+    implementation 'com.umeng.umsdk:push:6.0.1'
+
+    //zxing库
+    implementation 'cn.bingoogolapple:bga-qrcode-zxing:1.3.4'
+
+    //私有库
+    implementation 'yemao.support:widget:1.0.0@aar'
+
+    //科大讯飞 语音听写
+    implementation files('libs/Msc.jar')
+    implementation files('libs/Sunflower.jar')
+
+    //视频播放相关
+    implementation project(':ijkplayer')
+
+    //分包
+    implementation 'com.android.support:multidex:1.0.3'
+
+    //自定义选项卡tabLayout
+    implementation 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
+
+    //objectbox
+    debugImplementation "io.objectbox:objectbox-android-objectbrowser:$objectboxVersion"
+    releaseImplementation "io.objectbox:objectbox-android:$objectboxVersion"
+
+    compile 'com.meituan.android.walle:library:1.1.6'
+    implementation 'com.jaeger.statusbarutil:library:1.5.1'
+
+    //微信支付
+    implementation 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:+'
+    //图睿银行卡识别
+    implementation files('libs/TCardApi.jar')
+    //face++
+    implementation project(':idcard_quality')
+    implementation project(':livenesslibs')
+    //VasDolly
+    api 'com.leon.channel:helper:2.0.3'
+    //bugly
+    compile 'com.tencent.bugly:crashreport:latest.release' //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.1.9
+    compile 'com.tencent.bugly:nativecrashreport:latest.release' //其中latest.release指代最新Bugly NDK版本号，也可以指定明确的版本号，例如3.0
+    //美洽
+    implementation 'com.meiqia:meiqiasdk:+'
+}
+apply plugin: 'io.objectbox' // apply last
+
+def isRelease() {
+    def gradle = getGradle();
+    String tskReqStr = gradle.getStartParameter().getTaskRequests().toString()
+
+    Pattern pattern;
+    if (tskReqStr.contains("assemble")) {
+        println tskReqStr
+        pattern = Pattern.compile("assemble(\\w*)(Release|Debug)")
+    } else {
+        pattern = Pattern.compile("generate(\\w*)(Release|Debug)")
+    }
+    Matcher matcher = pattern.matcher(tskReqStr)
+
+    if (matcher.find()) {
+        String task = matcher.group(0).toLowerCase()
+        println("[BuildType] Current task: " + task)
+        return task.contains("release")
+    } else {
+        println "[BuildType] NO MATCH FOUND"
+        return true;
+    }
+}

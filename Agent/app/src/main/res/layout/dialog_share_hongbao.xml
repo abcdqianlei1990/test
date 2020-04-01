@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="188dp"
+    android:orientation="vertical"
+    android:background="@color/commonBackground">
+
+    <LinearLayout
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/btn_dialog_share_hongbao_wechat_share"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="23dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@mipmap/ic_share_hongbao_wechat" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="微信"
+            android:textColor="@color/black333333"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+    <Button
+        android:layout_marginTop="26dp"
+        android:id="@+id/btn_dialog_share_hongbao_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:text="取消"
+        android:textColor="@color/black333333" />
+
+</LinearLayout>

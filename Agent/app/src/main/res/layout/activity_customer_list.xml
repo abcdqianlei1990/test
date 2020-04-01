@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+
+    <RelativeLayout
+        android:id="@+id/activity_customer_list_title_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--<com.flyco.tablayout.CommonTabLayout-->
+        <!--android:id="@+id/tabLayoutFragmentCustomer"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="45dp"-->
+        <!--app:tl_indicator_color="@color/green29AC3E"-->
+        <!--app:tl_indicator_height="3dp"-->
+        <!--app:tl_tab_padding="14dp"-->
+        <!--app:tl_indicator_margin_top="9dp"-->
+        <!--app:tl_indicator_width_equal_title="true"-->
+        <!--app:tl_tab_space_equal="false"-->
+        <!--app:tl_textSelectColor="@color/green29AC3E"-->
+        <!--app:tl_textUnselectColor="@color/black333333"-->
+        <!--app:tl_textsize="16sp">-->
+
+        <!--</com.flyco.tablayout.CommonTabLayout>-->
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/ivFragmentCustomerTitleTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp18"
+            android:text="客户列表"
+            android:layout_marginTop="11dp"
+            android:layout_marginBottom="11dp"
+            android:textColor="@color/black333333"
+            android:layout_centerInParent="true"/>
+        <ImageView
+            android:id="@+id/ivFragmentCustomerSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:src="@mipmap/ic_company_search" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/commonLineHeight"
+            android:layout_below="@+id/ivFragmentCustomerTitleTv"
+            android:background="@color/commonLineColor"
+            />
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/activity_customer_list_search_tv"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginRight="25dp"
+        android:layout_below="@+id/activity_customer_list_title_group"
+        android:layout_toLeftOf="@+id/activity_customer_list_delete_tv"
+        android:background="@drawable/bg_search_input"
+        android:gravity="center"
+        android:hint="请输入用户手机号或姓名或常用称呼"
+        android:lineSpacingExtra="5dp"
+        android:paddingLeft="@dimen/horizontal_margin"
+        android:paddingTop="6dp"
+        android:paddingRight="@dimen/horizontal_margin"
+        android:paddingBottom="6dp"
+        android:text=""
+        android:textColor="@color/black333333"
+        android:textColorHint="@color/blackC0C0C0"
+        android:textSize="@dimen/sp14" />
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/activity_customer_list_delete_tv"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="6dp"
+        android:paddingRight="@dimen/horizontal_margin"
+        android:src="@android:drawable/ic_menu_close_clear_cancel"
+        android:visibility="gone" />
+
+
+    <cn.xzj.agent.widget.DropDownTabLayout
+        android:layout_below="@+id/activity_customer_list_search_tv"
+        android:id="@+id/dropDownTabLayoutFragmentCustomer"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+    </cn.xzj.agent.widget.DropDownTabLayout>
+
+    <View
+        android:id="@+id/viewFragmentCustomer"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@+id/dropDownTabLayoutFragmentCustomer"
+        android:background="@color/commonLineColor" />
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/smartRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/viewFragmentCustomer"
+        android:background="@color/commonBackground">
+
+     <com.ye.widget.StatusLayout
+         android:id="@+id/statusLayout"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent">
+         <android.support.v7.widget.RecyclerView
+             android:id="@+id/activity_customer_list_recyclerView"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent" />
+     </com.ye.widget.StatusLayout>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+</RelativeLayout>

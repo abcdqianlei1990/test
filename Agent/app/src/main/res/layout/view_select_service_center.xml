@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <com.aigestudio.wheelpicker.WheelPicker
+        android:id="@+id/wheel"
+        app:wheel_item_text_color="#D4EED8"
+        app:wheel_item_text_size="@dimen/sp18"
+        app:wheel_selected_item_text_color="@color/green29AC3E"
+        app:wheel_visible_item_count="5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/commonBackground">
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/activity_goldenbean_records_curSmartRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        android:layout_marginTop="10dp">
+        <com.ye.widget.StatusLayout
+            android:id="@+id/activity_goldenbean_records_curStatusLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <android.support.v7.widget.RecyclerView
+                android:visibility="visible"
+                android:id="@+id/activity_goldenbean_records_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+        </com.ye.widget.StatusLayout>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+</LinearLayout>

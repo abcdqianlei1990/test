@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="cn.xzj.agent.ui.mine.MyQRCodeActivity"
+    android:id="@+id/rl_qrcode_parent"
+    >
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/activity_qrcode_img"
+        android:layout_width="wrap_content"
+        android:layout_height="560dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:src="@mipmap/qrcode_bg"
+        />
+    <android.support.v7.widget.AppCompatTextView
+        style="@style/TextBlack333333"
+        android:textSize="18sp"
+        android:id="@+id/tv_nike_nameTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="165dp"
+        android:text="小职姐"
+        android:textColor="@color/white"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/activity_qrcode_img"
+        />
+    <android.support.v7.widget.AppCompatTextView
+        style="@style/TextBlack333333"
+        android:textSize="18sp"
+        android:id="@+id/tv_nike_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:text=""
+        android:textColor="#FFFF00"
+        app:layout_constraintTop_toTopOf="@+id/tv_nike_nameTitle"
+        app:layout_constraintLeft_toRightOf="@+id/tv_nike_nameTitle"
+        />
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/tv_nike_name_line"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/tv_nike_nameTitle"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="65dp"
+        android:layout_marginRight="65dp"
+        android:layout_marginTop="10dp"/>
+
+    <android.support.v7.widget.AppCompatTextView
+        style="@style/TextBlack333333"
+        android:textSize="18sp"
+        android:id="@+id/wechatTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="微信号"
+        android:textColor="@color/white"
+        app:layout_constraintLeft_toLeftOf="@+id/tv_nike_nameTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tv_nike_name_line" />
+    <android.support.v7.widget.AppCompatTextView
+        style="@style/TextBlack333333"
+        android:textSize="18sp"
+        android:id="@+id/wechat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="#FFFF00"
+        app:layout_constraintLeft_toLeftOf="@+id/tv_nike_name"
+        app:layout_constraintTop_toTopOf="@+id/wechatTitle" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/tv_wechat_line"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/wechatTitle"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="65dp"
+        android:layout_marginRight="65dp"
+        android:layout_marginTop="10dp"/>
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/iv_qr_code"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="70dp"
+        android:scaleType="fitXY"
+        android:padding="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_wechat_line"
+        android:background="@color/white"
+        app:srcCompat="@drawable/bg_common" />
+
+</android.support.constraint.ConstraintLayout>

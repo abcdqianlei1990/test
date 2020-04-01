@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.constraint.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/item_job_list_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/horizontal_margin"
+            android:layout_marginTop="18dp"
+            android:text="上海日月光封测技术员"
+            android:textColor="@color/black333333"
+            android:textSize="@dimen/sp16"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/item_job_list_zx_flag_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/horizontal_margin"
+            android:layout_marginTop="19dp"
+            android:background="@drawable/bg_common_blue_solid"
+            android:paddingBottom="2dp"
+            android:paddingLeft="9dp"
+            android:paddingRight="9dp"
+            android:paddingTop="2dp"
+            android:text="周薪"
+            android:textColor="@color/black333333"
+            android:textSize="@dimen/sp11"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/item_job_list_salary_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/horizontal_margin"
+            android:layout_marginTop="11dp"
+            android:text="综合工资"
+            android:textColor="@color/black808080"
+            android:textSize="@dimen/sp13"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/item_job_list_name_tv" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/item_job_list_reward_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/horizontal_margin"
+            android:layout_marginTop="2dp"
+            android:text="入职奖励"
+            android:textColor="@color/black808080"
+            android:textSize="@dimen/sp13"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/item_job_list_salary_tv" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/item_job_list_assembledate_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/horizontal_margin"
+            android:layout_marginTop="2dp"
+            android:text="集合时间"
+            android:textColor="@color/black808080"
+            android:textSize="@dimen/sp13"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/item_job_list_reward_tv" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/item_job_list_interviewdate_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/horizontal_margin"
+            android:layout_marginTop="2dp"
+            android:text="面试时间"
+            android:textColor="@color/black808080"
+            android:textSize="@dimen/sp13"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/item_job_list_assembledate_tv" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/item_job_list_toll_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/horizontal_margin"
+            android:layout_marginTop="2dp"
+            android:text="收费金额"
+            android:textColor="@color/black808080"
+            android:textSize="@dimen/sp13"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/item_job_list_interviewdate_tv" />
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/item_job_list_rewardCondition_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/horizontal_margin"
+            android:layout_marginTop="2dp"
+            android:text="小职姐提成"
+            android:textColor="@color/black808080"
+            android:textSize="@dimen/sp13"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/item_job_list_toll_tv"
+            android:paddingBottom="10dp"/>
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/item_job_list_rewardCondition_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@+id/item_job_list_rewardCondition_tv"
+            app:layout_constraintTop_toTopOf="@+id/item_job_list_rewardCondition_tv"
+            app:layout_constraintBottom_toBottomOf="@+id/item_job_list_rewardCondition_tv"
+            android:text=" (点击查看)"
+            android:textColor="@color/green29AC3E"
+            android:textSize="@dimen/sp13"
+            android:paddingBottom="10dp"
+            android:paddingRight="20dp"/>
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="25dp"
+            android:background="@color/commonLineColor"
+            app:layout_constraintTop_toBottomOf="@+id/item_job_list_rewardCondition_tv" />
+    </android.support.constraint.ConstraintLayout>
+</RelativeLayout>

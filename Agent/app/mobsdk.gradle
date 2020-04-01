@@ -1,0 +1,51 @@
+apply plugin: 'com.mob.sdk'
+def env = project.property('env')
+//println "#### mobsdk current environment is :" + env
+MobSDK {
+    appKey '294a90fa35905'
+    appSecret "9ef73604afe183713739c163f2b8357e"
+    ShareSDK {
+        //平台配置信息
+        devInfo {
+            Wechat {
+                switch (env) {
+                    case 'test':
+                        appId "wxfaea64fef4589f0d"
+                        appSecret "ce2efb198a8a0f3896448cd7e143ef3b"
+                        break
+                    case 'pro':
+                        appId "wxe4a4300b4dcb6cd6"
+                        appSecret "9038fcc78acb23c08be4276c5fc9da29"
+                        break
+                    default:
+                        appId "wxe4a4300b4dcb6cd6"
+                        appSecret "9038fcc78acb23c08be4276c5fc9da29"
+                        break
+                }
+                bypassApproval false
+                enable true
+            }
+            WechatMoments {
+                id 5
+                sortId 5
+                switch (env) {
+                    case 'test':
+                        appId "wxfaea64fef4589f0d"
+                        appSecret "ce2efb198a8a0f3896448cd7e143ef3b"
+                        break
+                    case 'pro':
+                        appId "wxe4a4300b4dcb6cd6"
+                        appSecret "9038fcc78acb23c08be4276c5fc9da29"
+                        break
+                    default:
+                        appId "wxe4a4300b4dcb6cd6"
+                        appSecret "9038fcc78acb23c08be4276c5fc9da29"
+                        break
+                }
+                bypassApproval false
+                enable true
+            }
+        }
+    }
+
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.aigestudio.wheelpicker.WheelPicker
+        android:id="@+id/wheel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:wheel_item_text_color="#D4EED8"
+        app:wheel_item_text_size="@dimen/sp18"
+        app:wheel_selected_item_text_color="@color/green29AC3E"
+        app:wheel_visible_item_count="3" />
+
+    <EditText
+        android:id="@+id/et_note"
+        style="@style/EditTextDefaultTheme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/sp15"
+        android:background="@drawable/bg_edit_radius_0_eoeoe3"
+        android:gravity="left"
+        android:hint="请输入文本说明"
+        android:minHeight="@dimen/dp_80"
+        android:padding="8dp" />
+</LinearLayout>

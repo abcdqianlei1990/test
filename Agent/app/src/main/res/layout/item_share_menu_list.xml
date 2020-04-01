@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:id="@+id/item_share_menus_content">
+    <ImageView
+        android:id="@+id/item_share_menus_icon"
+        android:layout_width="66sp"
+        android:layout_height="66sp"
+        android:src="@mipmap/ic_share_wechat"
+        android:layout_marginTop="13dp"/>
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/item_share_menus_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="微信"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_12"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="18dp"/>
+</LinearLayout>

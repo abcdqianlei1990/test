@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp">
+
+        <View
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="14dp"
+            android:layout_width="5dp"
+            android:layout_height="5dp"
+            android:background="@drawable/shape_item_customer_active_event_point" />
+
+        <TextView
+            android:id="@+id/tvCustomerActiveEventContent"
+            style="@style/TextBlack808080"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="14dp"
+            android:text="2018.03.08 12:00 用户15340908899使用小职姐小程序，快去联系！"
+            android:textSize="11sp" />
+    </LinearLayout>
+
+</RelativeLayout>

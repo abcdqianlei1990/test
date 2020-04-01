@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    >
+    <TextView
+        android:id="@+id/item_history_list_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="@dimen/sp16"
+        android:textColor="@color/black333333"
+        android:paddingTop="11dp"
+        android:paddingBottom="11dp"
+        android:paddingLeft="@dimen/horizontal_margin"
+        />
+    <TextView
+        android:id="@+id/item_history_list_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp1"
+        android:background="@color/commonBackground"/>
+</LinearLayout>

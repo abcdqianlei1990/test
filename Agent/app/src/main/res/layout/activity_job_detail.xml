@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/activity_job_detail_submit_btn"
+        android:orientation="vertical"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <!-- Banner 部分 -->
+                <com.youth.banner.Banner
+                    android:id="@+id/activity_job_detail_banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:background="@mipmap/ic_default_company_img"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:scrollIndicators="bottom"
+                    android:visibility="visible"
+                    app:image_scale_type="fit_xy"
+                    app:indicator_drawable_selected="@drawable/indicator_selected"
+                    app:indicator_drawable_unselected="@drawable/indicator_unselected"
+                    app:indicator_height="5dp"
+                    app:indicator_margin="3dp"
+                    app:indicator_width="5dp"
+                    app:is_auto_play="true" />
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/activity_job_detail_backArrow_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="14dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="14dp"
+                    android:paddingBottom="10dp"
+                    android:src="@mipmap/ic_nav_back_wihte" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginRight="14dp"
+                    android:paddingBottom="6dp">
+
+                    <LinearLayout
+                        android:id="@+id/activity_job_detail_image_count_btn"
+                        android:layout_width="60dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/shape_job_detail_image_or_video_count_bg"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/ic_job_detail_image" />
+
+                        <TextView
+                            android:id="@+id/activity_job_detail_image_count_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="2dp"
+                            android:text="0"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/activity_job_detail_video_count_btn"
+                        android:layout_width="60dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="6dp"
+                        android:background="@drawable/shape_job_detail_image_or_video_count_bg"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/ic_job_detail_video" />
+
+                        <TextView
+                            android:id="@+id/activity_job_detail_video_count_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="2dp"
+                            android:text="0"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/activity_job_detail_title_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/black333333"
+                    android:textSize="@dimen/sp28" />
+
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/activity_job_detail_companyShortName_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/horizontal_margin"
+                    android:text=""
+                    android:textColor="@color/black808080"
+                    android:textSize="@dimen/sp15" />
+
+                <TextView
+                    android:visibility="gone"
+                    android:id="@+id/tv_activity_job_detail_is_need_preReserve"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:background="@color/colorFDE9D3"
+                    android:gravity="center"
+                    android:paddingLeft="6dp"
+                    android:paddingTop="2dp"
+                    android:paddingRight="6dp"
+                    android:paddingBottom="2dp"
+                    android:text="需预报名"
+                    android:textColor="@color/black333333"
+                    android:textSize="11sp" />
+
+                <cn.xzj.agent.widget.TagCloudLayout
+                    android:layout_marginTop="2dp"
+                    android:id="@+id/activity_job_detail_flag_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="20dp"
+                    android:visibility="visible"
+                    app:lineSpacing="3dp"
+                    app:tagSpacing="3dp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginTop="22dp"
+                android:layout_marginRight="@dimen/horizontal_margin"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:weightSum="3">
+
+                <LinearLayout
+                    android:id="@+id/activity_job_detail_applyCount_group"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_common"
+                    android:orientation="vertical"
+                    android:paddingLeft="14dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="报名人数"
+                        android:textColor="@color/black808080"
+                        android:textSize="@dimen/sp_12" />
+
+                    <TextView
+                        android:id="@+id/activity_job_detail_applyCount_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text=""
+                        android:textColor="@color/black333333"
+                        android:textSize="@dimen/sp_12" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/activity_job_detail_employCount_group"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_common"
+                    android:orientation="vertical"
+                    android:paddingLeft="14dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="已预约数"
+                        android:textColor="@color/black808080"
+                        android:textSize="@dimen/sp_12" />
+
+                    <TextView
+                        android:id="@+id/activity_job_detail_yuyueCount_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text=""
+                        android:textColor="@color/black333333"
+                        android:textSize="@dimen/sp_12" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/activity_job_detail_entryCount_group"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_common"
+                    android:orientation="vertical"
+                    android:paddingLeft="14dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="入职奖励人数"
+                        android:textColor="@color/black808080"
+                        android:textSize="@dimen/sp_12" />
+
+                    <TextView
+                        android:id="@+id/activity_job_detail_entryCount_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text=""
+                        android:textColor="@color/black333333"
+                        android:textSize="@dimen/sp_12" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginTop="9dp"
+                android:layout_marginRight="@dimen/horizontal_margin"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginTop="2dp"
+                    android:src="@mipmap/ic_job_detail_company" />
+
+                <TextView
+                    android:id="@+id/activity_job_detail_companyName2_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:lineSpacingExtra="5dp"
+                    android:text=""
+                    android:textColor="@color/black333333"
+                    android:textSize="@dimen/sp_14" />
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginTop="9dp"
+                android:layout_marginRight="@dimen/horizontal_margin">
+
+                <ImageView
+                    android:id="@+id/activity_job_detail_workLoc_iv"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginTop="2dp"
+                    android:src="@mipmap/ic_job_detail_location" />
+
+                <TextView
+                    android:id="@+id/activity_job_detail_workLoc_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:layout_toRightOf="@+id/activity_job_detail_workLoc_iv"
+                    android:lineSpacingExtra="5dp"
+                    android:text=""
+                    android:textColor="@color/black333333"
+                    android:textSize="@dimen/sp_14" />
+
+
+                <TextView
+                    android:id="@+id/activity_job_detail_workAddress_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/activity_job_detail_workLoc_tv"
+                    android:layout_alignLeft="@+id/activity_job_detail_workLoc_tv"
+                    android:lineSpacingExtra="5dp"
+                    android:text=""
+                    android:textColor="@color/black808080"
+                    android:textSize="@dimen/sp_14" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginTop="22dp"
+                android:background="@color/commonLineColor" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginTop="27dp"
+                android:layout_marginRight="@dimen/horizontal_margin"
+                android:text="招聘需求（面试时间、男女需求比例、入职奖励、入职奖励条件）"
+                android:textColor="@color/black333333"
+                android:textSize="@dimen/sp15" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/activity_job_detail_requirement_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="12dp"
+                android:background="@color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginTop="19dp"
+                android:text="岗位特征"
+                android:textColor="@color/black333333"
+                android:textSize="@dimen/sp15" />
+
+            <TextView
+                android:id="@+id/activity_job_detail_features_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="@dimen/horizontal_margin"
+                android:lineSpacingExtra="5dp"
+                android:text=""
+                android:textColor="@color/black808080"
+                android:textSize="@dimen/sp_12" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginTop="15dp"
+                android:text="面试要求"
+                android:textColor="@color/black333333"
+                android:textSize="@dimen/sp15" />
+
+            <TextView
+                android:id="@+id/activity_job_detail_requirement_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="@dimen/horizontal_margin"
+                android:lineSpacingExtra="5dp"
+                android:text=""
+                android:textColor="@color/black808080"
+                android:textSize="@dimen/sp_12" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginTop="15dp"
+                android:text="综合工资"
+                android:textColor="@color/black333333"
+                android:textSize="@dimen/sp15" />
+
+            <TextView
+                android:id="@+id/activity_job_detail_salary_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="@dimen/horizontal_margin"
+                android:lineSpacingExtra="5dp"
+                android:text=""
+                android:textColor="@color/black808080"
+                android:textSize="@dimen/sp_12" />
+
+            <TextView
+                android:id="@+id/activity_job_detail_salaryDesctitle_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginTop="15dp"
+                android:text="工资说明"
+                android:textColor="@color/black333333"
+                android:textSize="@dimen/sp15" />
+
+            <TextView
+                android:id="@+id/activity_job_detail_salaryDesc_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="@dimen/horizontal_margin"
+                android:lineSpacingExtra="5dp"
+                android:text=""
+                android:textColor="@color/black808080"
+                android:textSize="@dimen/sp_12" />
+
+            <TextView
+                android:id="@+id/activity_job_detail_shisu_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginTop="15dp"
+                android:text="衣食住行"
+                android:textColor="@color/black333333"
+                android:textSize="@dimen/sp15" />
+
+            <TextView
+                android:id="@+id/activity_job_detail_shisu_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="@dimen/horizontal_margin"
+                android:lineSpacingExtra="5dp"
+                android:text=""
+                android:textColor="@color/black808080"
+                android:textSize="@dimen/sp_12" />
+
+            <TextView
+                android:id="@+id/activity_job_detail_private_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginTop="15dp"
+                android:text="隐私描述（用户在APP上看不到）"
+                android:textColor="@android:color/holo_red_light"
+                android:textSize="@dimen/sp15" />
+
+            <TextView
+                android:id="@+id/activity_job_detail_private"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="@dimen/horizontal_margin"
+                android:lineSpacingExtra="5dp"
+                android:text=""
+                android:textColor="@android:color/holo_red_light"
+                android:textSize="@dimen/sp_12" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginTop="15dp"
+                android:text="任职要求"
+                android:textColor="@color/black333333"
+                android:textSize="@dimen/sp15" />
+
+            <TextView
+                android:id="@+id/activity_job_detail_conditions_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="@dimen/horizontal_margin"
+                android:lineSpacingExtra="5dp"
+                android:text=""
+                android:textColor="@color/black808080"
+                android:textSize="@dimen/sp_12" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginTop="15dp"
+                android:text="工作福利"
+                android:textColor="@color/black333333"
+                android:textSize="@dimen/sp15" />
+
+            <TextView
+                android:id="@+id/activity_job_detail_welfare_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="@dimen/horizontal_margin"
+                android:lineSpacingExtra="5dp"
+                android:text=""
+                android:textColor="@color/black808080"
+                android:textSize="@dimen/sp_12" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginTop="15dp"
+                android:text="工作内容"
+                android:textColor="@color/black333333"
+                android:textSize="@dimen/sp15" />
+
+            <TextView
+                android:id="@+id/activity_job_detail_content_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="@dimen/horizontal_margin"
+                android:lineSpacingExtra="5dp"
+                android:text=""
+                android:textColor="@color/black808080"
+                android:textSize="@dimen/sp_12" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginTop="15dp"
+                android:text="工作时间"
+                android:textColor="@color/black333333"
+                android:textSize="@dimen/sp15" />
+
+            <TextView
+                android:id="@+id/activity_job_detail_time_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="@dimen/horizontal_margin"
+                android:lineSpacingExtra="5dp"
+                android:text=""
+                android:textColor="@color/black808080"
+                android:textSize="@dimen/sp_12" />
+
+
+            <TextView
+                android:id="@+id/activity_job_detail_noticeTitle_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginTop="15dp"
+                android:text="注意事项"
+                android:textColor="@color/black333333"
+                android:textSize="@dimen/sp15" />
+
+            <TextView
+                android:id="@+id/activity_job_detail_notice_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="@dimen/horizontal_margin"
+                android:lineSpacingExtra="5dp"
+                android:text=""
+                android:textColor="@color/black808080"
+                android:textSize="@dimen/sp_12" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginTop="15dp"
+                android:text="企业简介"
+                android:textColor="@color/black333333"
+                android:textSize="@dimen/sp15" />
+
+            <TextView
+                android:id="@+id/activity_job_detail_intro_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="@dimen/horizontal_margin"
+                android:lineSpacingExtra="5dp"
+                android:text=""
+                android:textColor="@color/black808080"
+                android:textSize="@dimen/sp_12" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- ################# 底部按钮 #################-->
+    <TextView
+        android:id="@+id/activity_job_detail_submit_btn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/green29AC3E"
+        android:gravity="center"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:text="马上预约"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp18" />
+
+    <TextView
+        android:id="@+id/tv_status"
+        style="@style/TextBlack808080Size_12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/shape_job_feature_item_unselected"
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="5dp"
+        android:text="已停招"
+        android:visibility="gone" />
+</RelativeLayout>
+
+

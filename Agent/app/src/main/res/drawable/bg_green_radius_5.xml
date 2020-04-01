@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--触摸时-->
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <corners android:radius="5dp" />
+            <solid android:color="@color/green29AC3E" />
+        </shape>
+    </item>
+
+    <!--可选-->
+    <item android:state_enabled="true">
+        <shape android:shape="rectangle">
+            <corners android:radius="5dp" />
+            <solid android:color="@color/green4CBE5F" />
+        </shape>
+    </item>
+    <!--不可选-->
+    <item android:state_enabled="false">
+        <shape android:shape="rectangle">
+            <corners android:radius="5dp" />
+            <solid android:color="@color/blackC0C0C0" />
+        </shape>
+    </item>
+    <!--常态-->
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="5dp" />
+            <solid android:color="@color/green4CBE5F" />
+        </shape>
+    </item>
+
+</selector>

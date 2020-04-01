@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_phone"
+            style="@style/TextBlack808080"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_job_feature_item_unselected"
+            android:gravity="center"
+            android:paddingBottom="6dp"
+            android:paddingLeft="13dp"
+            android:paddingRight="13dp"
+            android:paddingTop="6dp"
+            android:text="手机"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_wx"
+            style="@style/TextBlack808080"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_job_feature_item_unselected"
+            android:gravity="center"
+            android:paddingBottom="6dp"
+            android:paddingTop="6dp"
+            android:text="微信"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_tel"
+            style="@style/TextBlack808080"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_job_feature_item_unselected"
+            android:gravity="center"
+            android:paddingBottom="6dp"
+            android:paddingTop="6dp"
+            android:text="固话"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/et_note"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/bg_gray_solid_with_4corner"
+        android:enabled="true"
+        android:focusable="true"
+        android:gravity="left|top"
+        android:hint="请填写联系的注记"
+        android:maxLength="50"
+        android:paddingBottom="37dp"
+        android:paddingLeft="11dp"
+        android:paddingRight="11dp"
+        android:paddingTop="7dp"
+        android:text=""
+        android:textColor="@color/black666666"
+        android:textColorHint="@color/black999999"
+        android:textSize="@dimen/sp12"
+        android:visibility="visible" />
+
+</LinearLayout>

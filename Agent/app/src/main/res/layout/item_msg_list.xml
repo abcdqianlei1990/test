@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+    <TextView
+        android:id="@+id/item_msg_type_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/green29AC3E"
+        android:text=""
+        android:textSize="@dimen/sp16"
+        android:layout_marginTop="17dp"
+        android:layout_marginLeft="@dimen/horizontal_margin"/>
+    <TextView
+        android:id="@+id/item_msg_date_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/sp12"
+        android:text=""
+        android:textColor="@color/black999999"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/horizontal_margin"
+        android:gravity="right"/>
+    <TextView
+        android:id="@+id/item_msg_content_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black333333"
+        android:text=""
+        android:textSize="@dimen/sp13"
+        android:layout_below="@+id/item_msg_type_tv"
+        android:lineSpacingExtra="3dp"
+        android:layout_marginTop="5dp"
+        android:layout_alignLeft="@+id/item_msg_type_tv"
+        android:layout_marginRight="@dimen/horizontal_margin"/>
+    <TextView
+        android:id="@+id/item_msg_line_tv"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@+id/item_msg_content_tv"
+        android:layout_marginTop="18dp"
+        android:background="@color/commonLineColor"
+        />
+</RelativeLayout>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:fillViewport="true"
+    android:id="@+id/activity_login_container">
+    <LinearLayout
+        android:id="@+id/activity_login_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/activity_login_img"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@mipmap/logo"
+            android:layout_marginTop="30dp"/>
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/activity_login_mobile_ed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="45dp"
+            android:layout_marginRight="45dp"
+            android:layout_marginTop="44dp"
+            android:background="@null"
+            android:hint="请输入手机号"
+            android:inputType="number"
+            android:maxLength="25"
+            android:maxLines="1"
+            android:paddingBottom="11dp"
+            android:singleLine="true"
+            android:textColor="@color/black333333"
+            android:textColorHint="@color/commonHintColor"
+            android:textSize="@dimen/sp18" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp1"
+            android:layout_marginLeft="38dp"
+            android:layout_marginRight="38dp"
+            android:background="@color/green3329ac3e" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="45dp"
+            android:layout_marginRight="45dp"
+            android:layout_marginTop="31dp">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/activity_login_code_ed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:hint="请输入验证码"
+                android:inputType="number"
+                android:maxLength="25"
+                android:maxLines="1"
+                android:paddingBottom="11dp"
+                android:singleLine="true"
+                android:textColor="@color/black333333"
+                android:textColorHint="@color/commonHintColor"
+                android:textSize="@dimen/sp18" />
+
+            <cn.xzj.agent.widget.TimeButton
+                android:id="@+id/btn_verification_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:paddingBottom="11dp"
+                android:text="获取验证码"
+                android:textColor="#ff29ac3e"
+                android:textSize="@dimen/sp18" />
+        </RelativeLayout>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp1"
+            android:layout_marginLeft="38dp"
+            android:layout_marginRight="38dp"
+            android:background="@color/green3329ac3e" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/activity_login_submit_btn"
+            style="@style/CommonSubmitBtnStyle"
+            android:layout_marginTop="53dp"
+            android:text="登录" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/activity_login_agreement_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/activity_login_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        >
+        <CheckBox
+            android:id="@+id/activity_login_agreement_cb"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/bg_checkbox"
+            android:checked="false"
+            android:button="@null"/>
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/activity_login_agreement_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp_12"
+            android:text="我已阅读并同意"
+            android:layout_marginLeft="4dp"
+            android:textColor="@color/black666666"
+            android:layout_toRightOf="@+id/activity_login_agreement_cb"
+            android:layout_alignBaseline="@+id/activity_login_agreement_cb"
+            />
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/activity_login_agreement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp_12"
+            android:text="《自由职业者服务协议》"
+            android:textColor="@color/colorPrimary"
+            android:layout_toRightOf="@+id/activity_login_agreement_title"
+            android:layout_alignBaseline="@+id/activity_login_agreement_cb"
+            />
+    </RelativeLayout>
+    <!--底部banner-->
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/activity_login_banner_img"
+        android:layout_width="match_parent"
+        android:layout_height="121dp"
+        android:src="@mipmap/login_banner"
+        app:layout_constraintTop_toBottomOf="@+id/activity_login_agreement_group"
+        android:layout_marginTop="50dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:visibility="visible"
+        />
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/smartRefreshLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/commonBackground"
+            android:orientation="vertical">
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/rl_top_parent"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:background="@mipmap/usercenter_bg">
+
+                <!--扫一扫按钮-->
+                <LinearLayout
+                    android:id="@+id/btn_scan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_marginRight="15dp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:visibility="visible">
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        app:srcCompat="@drawable/ic_scan" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        style="@style/TextBlack808080Size_12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/scan_it"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_12" />
+                </LinearLayout>
+
+                <!--头像-->
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/fragment_usercenter_avatar_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/btn_scan"
+                    android:layout_marginTop="48dp"
+                    android:layout_marginLeft="14dp"
+                    android:src="@mipmap/usercenter_avatar"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"/>
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/fragment_usercenter_name_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="name"
+                    android:layout_alignTop="@+id/btn_scan"
+                    android:layout_marginTop="38dp"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp18"
+                    android:gravity="center"
+                    android:layout_marginLeft="20dp"
+                    app:layout_constraintLeft_toRightOf="@+id/fragment_usercenter_avatar_img"
+                    app:layout_constraintTop_toTopOf="parent"/>
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/fragment_usercenter_phone_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="手机："
+                    android:textSize="@dimen/sp_14"
+                    android:textColor="@color/white"
+                    app:layout_constraintTop_toBottomOf="@+id/fragment_usercenter_name_tv"
+                    app:layout_constraintLeft_toLeftOf="@+id/fragment_usercenter_name_tv"
+                    android:layout_marginTop="9dp"
+                    />
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/fragment_usercenter_wx_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="微信："
+                    android:textSize="@dimen/sp_14"
+                    android:textColor="@color/white"
+                    app:layout_constraintTop_toBottomOf="@+id/fragment_usercenter_phone_tv"
+                    app:layout_constraintLeft_toLeftOf="@+id/fragment_usercenter_phone_tv"
+                    android:layout_marginTop="9dp"
+                    />
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_nav_right_white"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_marginRight="80dp"
+                    app:layout_constraintTop_toTopOf="@+id/fragment_usercenter_phone_tv"
+                    app:layout_constraintBottom_toBottomOf="@+id/fragment_usercenter_wx_tv"/>
+            </android.support.constraint.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/commonBackground"
+                android:orientation="vertical">
+                <!--我的金豆-->
+                <RelativeLayout
+                    android:id="@+id/fragment_usercenter_my_beans_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:layout_marginTop="10dp"
+                    android:visibility="gone"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/iv_my_beans_title_tv"
+                        style="@style/TextBlack808080Size_14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginTop="14dp"
+                        android:layout_marginBottom="14dp"
+                        android:text="我的金豆" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/iv_my_beans_count_tv"
+                        style="@style/TextBlack333333Size_14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="13sp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="14dp"
+                        android:layout_toLeftOf="@+id/iv_my_beans_arrow"
+                        android:text=""
+                        android:textColor="@color/redFF7731" />
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/iv_my_beans_arrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="14dp"
+                        android:src="@mipmap/ic_right_arrow" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/commonLineHeight"
+                        android:background="@color/commonLineColor"
+                        android:layout_below="@+id/iv_my_beans_title_tv"/>
+                </RelativeLayout>
+                <!--购买资源-->
+                <RelativeLayout
+                    android:id="@+id/fragment_usercenter_buy_res_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_50"
+                    android:background="@color/white"
+                    android:visibility="gone"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        style="@style/TextBlack808080Size_14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="14dp"
+                        android:text="购买资源" />
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/iv_buy_res_arrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="14dp"
+                        android:src="@mipmap/ic_right_arrow" />
+                </RelativeLayout>
+                <!--邀请加入兼职小职姐-->
+                <RelativeLayout
+                    android:id="@+id/fragment_usercenter_entryInvite_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:visibility="gone"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:layout_marginTop="10dp">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/iv_entryInvite_title_tv"
+                        style="@style/TextBlack808080Size_14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginTop="14dp"
+                        android:layout_marginBottom="14dp"
+                        android:text="邀请加入兼职小职姐" />
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/iv_entryInvite_arrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="14dp"
+                        android:src="@mipmap/ic_right_arrow" />
+                </RelativeLayout>
+                <!--我的团队-->
+                <RelativeLayout
+                    android:id="@+id/fragment_usercenter_my_team_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:layout_marginTop="10dp"
+                    android:visibility="gone"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/iv_my_team_title_tv"
+                        style="@style/TextBlack808080Size_14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginTop="14dp"
+                        android:layout_marginBottom="14dp"
+                        android:text="我的团队" />
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/iv_my_team_arrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="14dp"
+                        android:src="@mipmap/ic_right_arrow" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/commonLineHeight"
+                        android:background="@color/commonLineColor"
+                        android:layout_below="@+id/iv_my_team_title_tv"/>
+                </RelativeLayout>
+                <!--我的提成-->
+                <RelativeLayout
+                    android:id="@+id/fragment_usercenter_my_reward_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_50"
+                    android:visibility="gone"
+                    android:background="@color/white"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        style="@style/TextBlack808080Size_14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="14dp"
+                        android:text="我的提成" />
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/iv_my_reward_arrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="14dp"
+                        android:src="@mipmap/ic_right_arrow" />
+                </RelativeLayout>
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@color/commonBackground" />
+
+                <RelativeLayout
+                    android:id="@+id/fragment_usercenter_upload_wx_number_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_50"
+                    android:background="@color/white"
+                    android:visibility="gone"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <TextView
+                        style="@style/TextBlack808080Size_14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="14dp"
+                        android:text="上传微信数" />
+
+                    <TextView
+                        android:id="@+id/tv_is_upload_wx_scrrentshot"
+                        style="@style/TextBlack333333Size_14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="14dp"
+                        android:layout_toLeftOf="@+id/iv_upload_wx_number_arrow"
+                        android:textColor="@color/redFF7731" />
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/iv_upload_wx_number_arrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="14dp"
+                        android:src="@mipmap/ic_right_arrow" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:visibility="gone"
+                    android:background="@color/commonLineColor" />
+
+                <RelativeLayout
+                    android:id="@+id/fragment_usercenter_register_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_50"
+                    android:visibility="gone"
+                    android:background="@color/white"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <TextView
+                        style="@style/TextBlack808080Size_14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="14dp"
+                        android:text="代注册" />
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="14dp"
+                        android:src="@mipmap/ic_right_arrow" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/commonLineColor" />
+
+                <RelativeLayout
+                    android:id="@+id/fragment_usercenter_qrcode_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_50"
+                    android:background="@color/white"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <TextView
+                        style="@style/TextBlack808080Size_14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="14dp"
+                        android:text="我的二维码" />
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="14dp"
+                        android:layout_marginLeft="5dp"
+                        android:src="@mipmap/ic_right_arrow" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@color/commonBackground" />
+
+
+                <RelativeLayout
+                    android:id="@+id/fragment_usercenter_HongBao_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_50"
+                    android:background="@color/white"
+                    android:visibility="gone"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <TextView
+                        style="@style/TextBlack808080Size_14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="14dp"
+                        android:text="发红包" />
+
+                    <TextView
+                        style="@style/TextBlack333333Size_14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="13sp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="14dp"
+                        android:layout_toLeftOf="@+id/iv_HongBao_arrow"
+                        android:text="给会员发红包"
+                        android:textColor="@color/redFF7731" />
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/iv_HongBao_arrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="14dp"
+                        android:layout_marginLeft="5dp"
+                        android:src="@mipmap/ic_right_arrow" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:visibility="gone"
+                    android:background="@color/commonBackground" />
+                <RelativeLayout
+                    android:id="@+id/fragment_usercenter_feedback_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_50"
+                    android:background="@color/white"
+                    android:visibility="gone"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <TextView
+                        style="@style/TextBlack808080Size_14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="14dp"
+                        android:text="问题反馈" />
+
+                    <TextView
+                        style="@style/TextBlack333333Size_14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="14dp"
+                        android:layout_toLeftOf="@+id/iv_feedback_arrow"
+                        android:text="有问题马上反馈哦"
+                        android:textSize="13sp"
+                        android:textColor="@color/redFF7731" />
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/iv_feedback_arrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="14dp"
+                        android:layout_marginLeft="5dp"
+                        android:src="@mipmap/ic_right_arrow" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:visibility="gone"
+                    android:background="@color/commonLineColor" />
+                <RelativeLayout
+                    android:id="@+id/fragment_usercenter_chat_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_50"
+                    android:background="@color/white"
+                    android:visibility="gone"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <TextView
+                        style="@style/TextBlack808080Size_14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="14dp"
+                        android:text="问题解答" />
+
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/iv_chat_arrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="14dp"
+                        android:layout_marginLeft="5dp"
+                        android:src="@mipmap/ic_right_arrow" />
+                </RelativeLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:visibility="gone"
+                    android:background="@color/commonLineColor" />
+
+                <RelativeLayout
+                    android:id="@+id/fragment_usercenter_repository_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_50"
+                    android:background="@color/white"
+                    android:visibility="gone"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <TextView
+                        style="@style/TextBlack808080Size_14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="14dp"
+                        android:text="知识库" />
+
+                    <TextView
+                        style="@style/TextBlack333333Size_14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="14dp"
+                        android:textSize="13sp"
+                        android:layout_toLeftOf="@+id/iv_repository_arrow"
+                        android:text="访问需连接公司WiFi"
+                        android:textColor="@color/redFF7731" />
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/iv_repository_arrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="14dp"
+                        android:layout_marginLeft="5dp"
+                        android:src="@mipmap/ic_right_arrow" />
+                </RelativeLayout>
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/fragment_usercenter_logout_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="退出登录"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    style="@style/CommonSubmitBtnStyle"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@color/commonBackground" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+</android.support.v4.widget.SwipeRefreshLayout>

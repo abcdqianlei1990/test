@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:background="@color/white"
+    android:orientation="horizontal"
+    android:layout_height="wrap_content">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_width="300dp"
+        android:padding="12dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_job_detail_zpxq_bg"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/item_requirement_interviewdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="面试时间：--"
+            android:textColor="@color/black808080"
+            android:textSize="@dimen/sp12"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toRightOf="@+id/item_requirement_interviewdate"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/item_requirement_major"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:text="主推"
+                android:textColor="@color/redFF7731"
+                android:textSize="@dimen/sp12" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/item_requirement_stopRecruitment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="停招"
+                android:textColor="@color/redFF7731"
+                android:textSize="@dimen/sp12" />
+        </LinearLayout>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/item_requirement_assembledate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="--"
+            android:textColor="@color/black808080"
+            android:textSize="@dimen/sp12"
+            app:layout_constraintLeft_toLeftOf="@+id/item_requirement_interviewdate"
+            app:layout_constraintTop_toBottomOf="@+id/item_requirement_interviewdate" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/item_requirement_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="--"
+            android:textColor="@color/black808080"
+            android:textSize="@dimen/sp12"
+            app:layout_constraintLeft_toLeftOf="@+id/item_requirement_interviewdate"
+            app:layout_constraintTop_toBottomOf="@+id/item_requirement_assembledate" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/item_requirement_requirecount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="--"
+            android:textColor="@color/black808080"
+            android:textSize="@dimen/sp12"
+            app:layout_constraintLeft_toLeftOf="@+id/item_requirement_interviewdate"
+            app:layout_constraintTop_toBottomOf="@+id/item_requirement_quantity" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/item_requirement_reward_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="入职奖励："
+            android:textColor="@color/black808080"
+            android:textSize="@dimen/sp12"
+            app:layout_constraintLeft_toLeftOf="@+id/item_requirement_interviewdate"
+            app:layout_constraintTop_toBottomOf="@+id/item_requirement_requirecount" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/item_requirement_reward"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:lineSpacingExtra="5dp"
+            android:text="--"
+            android:textColor="@color/black808080"
+            android:textSize="@dimen/sp12"
+            app:layout_constraintLeft_toRightOf="@+id/item_requirement_reward_title"
+            app:layout_constraintTop_toBottomOf="@+id/item_requirement_requirecount" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/item_requirement_hourlywage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="--"
+            android:textColor="@color/black808080"
+            android:textSize="@dimen/sp12"
+            app:layout_constraintLeft_toLeftOf="@+id/item_requirement_interviewdate"
+            app:layout_constraintTop_toBottomOf="@+id/item_requirement_reward" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/item_requirement_platformSubsidy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="平台补贴"
+            android:textColor="@color/black808080"
+            android:textSize="@dimen/sp12"
+            app:layout_constraintLeft_toLeftOf="@+id/item_requirement_interviewdate"
+            app:layout_constraintTop_toBottomOf="@+id/item_requirement_hourlywage" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/item_requirement_platformSubsidyDeadline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="差价、补贴截止日期:"
+            android:textColor="@color/black808080"
+            android:textSize="@dimen/sp12"
+            app:layout_constraintLeft_toLeftOf="@+id/item_requirement_interviewdate"
+            app:layout_constraintTop_toBottomOf="@+id/item_requirement_platformSubsidy" />
+
+        <LinearLayout
+            android:id="@+id/item_requirement_shoufei_monery_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/item_requirement_platformSubsidyDeadline">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="收费金额："
+                android:textColor="@color/black808080"
+                android:textSize="@dimen/sp12" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <me.codeboy.android.aligntextview.AlignTextView
+                    android:id="@+id/item_requirement_shoufei_monery_man"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="男士"
+                    android:textColor="@color/black808080"
+                    android:textSize="@dimen/sp12" />
+
+                <me.codeboy.android.aligntextview.AlignTextView
+                    android:id="@+id/item_requirement_shoufei_monery_wuman"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="女士收费:"
+                    android:textColor="@color/black808080"
+                    android:textSize="@dimen/sp12" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/item_requirement_rewardCondition_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/item_requirement_shoufei_monery_parent"
+            app:layout_constraintLeft_toLeftOf="@+id/item_requirement_shoufei_monery_parent"
+            android:layout_marginTop="5dp"
+            android:text="小职姐提成："
+            android:textColor="@color/black808080"
+            android:textSize="@dimen/sp12"/>
+    </android.support.constraint.ConstraintLayout>
+</LinearLayout>

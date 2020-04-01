@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.v4.widget.ContentLoadingProgressBar
+        android:id="@+id/activity_excessive_progressbar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        style="?android:attr/progressBarStyleSmall"
+        android:layout_centerInParent="true"/>
+    <android.support.v7.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="数据加载中..."
+        android:textSize="@dimen/sp12"
+        android:textColor="@color/black666666"
+        android:layout_below="@+id/activity_excessive_progressbar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        />
+</RelativeLayout>

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			  xmlns:app="http://schemas.android.com/apk/res-auto"
+			  android:orientation="vertical"
+			  android:layout_width="match_parent"
+			  android:layout_height="match_parent"
+			  android:background="@color/commonBackground">
+
+	<!--持卡人信息-->
+	<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="@color/white"
+			android:layout_marginTop="20dp">
+
+		<android.support.v7.widget.AppCompatTextView
+				android:id="@+id/bind_card_ownername_content"
+				android:layout_width="75dp"
+				android:layout_height="wrap_content"
+				android:text="持卡人"
+				android:textSize="@dimen/sp_15"
+				android:textColor="@color/black666666"
+				android:layout_marginLeft="20dp"
+				android:layout_marginTop="20dp"
+				android:layout_marginBottom="20dp"/>
+
+		<android.support.v7.widget.AppCompatTextView
+				android:id="@+id/bind_card_ownername_tv"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text=""
+				android:textColor="@color/black333333"
+				android:layout_alignBaseline="@+id/bind_card_ownername_content"
+				android:layout_toRightOf="@+id/bind_card_ownername_content"
+				android:textSize="@dimen/sp_15"
+				android:background="@null"
+				android:layout_marginLeft="40dp"/>
+
+		<android.support.v7.widget.AppCompatTextView
+				android:layout_width="match_parent"
+				android:layout_height="@dimen/commonLineHeight"
+				android:background="@color/commonLineColor"
+				android:layout_below="@+id/bind_card_ownername_content"
+				android:layout_alignLeft="@+id/bind_card_ownername_content"
+				/>
+	</RelativeLayout>
+
+	<!--借记卡号-->
+	<RelativeLayout
+			android:id="@+id/bind_card_number_wrapper"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="@color/white">
+
+		<android.support.v7.widget.AppCompatTextView
+				android:id="@+id/bind_card_number_content"
+				android:layout_width="75dp"
+				android:layout_height="wrap_content"
+				android:text="借记卡号"
+				android:textSize="@dimen/sp_15"
+				android:clickable="false"
+				android:textColor="@color/black666666"
+				android:layout_marginLeft="20dp"
+				android:layout_marginTop="20dp"
+				android:layout_marginBottom="20dp"/>
+
+		<android.support.v7.widget.AppCompatEditText
+				android:id="@+id/bind_card_number"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text=""
+				android:hint="请扫描借记卡"
+				android:textColor="@color/black333333"
+				android:textColorHint="@color/black999999"
+				android:layout_alignBaseline="@+id/bind_card_number_content"
+				android:layout_toRightOf="@+id/bind_card_number_content"
+				android:layout_toLeftOf="@+id/bind_card_number_icon"
+				android:textSize="@dimen/sp_15"
+				android:background="@null"
+				android:layout_marginLeft="40dp"
+				android:maxLines="2"
+				android:maxLength="24"
+				android:inputType="number"
+				/>
+
+		<android.support.v7.widget.AppCompatImageView
+				android:id="@+id/bind_card_number_icon"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				app:srcCompat="@drawable/ic_camera"
+				android:textSize="@dimen/sp_15"
+				android:textColor="@color/black666666"
+				android:layout_alignParentEnd="true"
+				android:layout_alignParentRight="true"
+				android:layout_centerVertical="true"
+				android:paddingRight="20dp"
+
+				/>
+
+		<android.support.v7.widget.AppCompatTextView
+				android:layout_width="match_parent"
+				android:layout_height="@dimen/commonLineHeight"
+				android:background="@color/commonLineColor"
+				android:layout_below="@+id/bind_card_number_content"
+				android:layout_alignLeft="@+id/bind_card_number_content"
+				/>
+	</RelativeLayout>
+
+	<!--预留手机号-->
+	<RelativeLayout
+			android:id="@+id/bind_card_phone_wrapper"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="@color/white"
+		android:visibility="gone">
+
+		<android.support.v7.widget.AppCompatTextView
+				android:id="@+id/bind_card_phone_content"
+				android:layout_width="75dp"
+				android:layout_height="wrap_content"
+				android:text="预留手机号"
+				android:textSize="15sp"
+				android:textColor="@color/black666666"
+				android:layout_marginLeft="20dp"
+				android:layout_marginTop="20dp"
+				android:layout_marginBottom="20dp"/>
+
+		<android.support.v7.widget.AppCompatEditText
+				android:id="@+id/bind_card_phone"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text=""
+				android:hint="请输入银行预留手机号"
+				android:textColor="@color/black333333"
+				android:textColorHint="@color/black999999"
+				android:layout_alignBaseline="@+id/bind_card_phone_content"
+				android:layout_toRightOf="@+id/bind_card_phone_content"
+				android:layout_toLeftOf="@+id/bind_card_phone_icon"
+				android:textSize="@dimen/sp_15"
+				android:background="@null"
+				android:layout_marginLeft="40dp"
+				android:inputType="number"
+				android:maxLines="2"
+				android:maxLength="13"
+				/>
+
+		<android.support.v7.widget.AppCompatImageView
+				android:id="@+id/bind_card_phone_icon"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				app:srcCompat="@drawable/ic_yuliushoujihao"
+				android:textSize="@dimen/sp_15"
+				android:textColor="@color/black666666"
+				android:layout_alignParentEnd="true"
+				android:layout_alignParentRight="true"
+				android:layout_centerVertical="true"
+				android:paddingRight="20dp"
+				/>
+	</RelativeLayout>
+
+	<android.support.v7.widget.AppCompatTextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textSize="@dimen/sp_12"
+			android:textColor="@color/black666666"
+			android:text="*能正常接收银行短信"
+			android:layout_marginTop="17dp"
+			android:layout_marginLeft="21dp"
+		android:visibility="gone"/>
+
+	<android.support.v7.widget.AppCompatButton
+			android:id="@+id/bind_card_btn"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="27dp"
+			style="@style/CommonSubmitBtnStyle"
+			android:text="绑定银行卡"/>
+</LinearLayout>
